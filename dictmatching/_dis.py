@@ -21,23 +21,33 @@ OP_REGEX = re.compile(
 )
 
 
+# Note that we chose to parse dis.dis' output and not parse bytecode by ourselves.
+# This is because we believe dis.dis' output is more stable and less fragile than the bytecode structure.
 def dis(obj):
+    """
+    A wrapper around the stdlib dis.dis that yields programmer friendly objects.
+
+    :rtype: collections.Iterable[Op]
+    """
     with _capture_stdout() as output:
         _dis(obj)
-    return _parse_dis_output(output.getvalue())
+    return parse_dis_output(output.getvalue())
 
 
-def _parse_dis_output(text):
+def parse_dis_output(text):
+    """
+    A util function that parses dis.dis output to nice objects.
+    """
     prev = None
     lines = filter(None, (line.strip() for line in text.splitlines()))
     for line in lines:
-        op = _parse_line(line.strip())
+        op = _parse_dis_line(line.strip())
         op = op._replace(lineno=op.lineno or prev.lineno)
         yield op
         prev = op
 
 
-def _parse_line(line):
+def _parse_dis_line(line):
     matches = OP_REGEX.match(line).groupdict()
     return Op(
         lineno=int(matches['lineno']) if matches.get('lineno') else None,

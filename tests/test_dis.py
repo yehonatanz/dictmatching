@@ -25,7 +25,7 @@ def test_dis_parsing():
              40 CALL_FUNCTION            1
              43 RETURN_VALUE
 '''
-    ops = list(_dis._parse_dis_output(code_to_dis))
+    ops = list(_dis.parse_dis_output(code_to_dis))
     assert ops[0] == (25, False, False, 0, 'LOAD_GLOBAL', 0, '_capture_stdout')
     assert ops[1] == (25, False, False, 3, 'CALL_FUNCTION', 0, None)
     assert ops[2] == (25, False, False, 6, 'SETUP_WITH', 17, 'to 26')
