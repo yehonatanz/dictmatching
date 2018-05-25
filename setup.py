@@ -13,7 +13,11 @@ def _get_version():
 def main():
     return setup(
         name='dictmatching',
-        version=_get_version()
+        version=_get_version(),
+        install_requires=[
+            'decorator',
+            'six',
+        ],
     )
 
 
