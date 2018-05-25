@@ -9,7 +9,7 @@ from ._dis import dis
 @contextmanager
 def unpack(dictionary):
     # +1 for unpack and +1 that @contextmanager adds
-    dest = _get_with_destination(inspect.currentframe(2))
+    dest = _get_with_destination(inspect.currentframe().f_back.f_back)
     if isinstance(dest, tuple):
         yield tuple(dictionary[key] for key in dest)
     else:

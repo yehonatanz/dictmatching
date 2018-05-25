@@ -36,5 +36,5 @@ def test_dis_parsing():
 
 def test_capturing():
     with _dis._capture_stdout() as buf:
-        print 'hi'
+        print('hi')
     assert buf.getvalue() == 'hi\n'
