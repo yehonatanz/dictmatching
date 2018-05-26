@@ -8,8 +8,18 @@ from ._dis import dis
 
 @contextmanager
 def unpack(dictionary):
+    """
+    Unpacks a dictionary (or any mapping type) in a nice and clean form.
+
+    Usage example:
+    >>> d1 = dict(a=1, b=2)
+    >>> d2 = dict(x=3, y=4)
+    >>> with unpack(d1) as a, unpack(d2) as (x, y):
+    ...     print(a + x + y)
+    """
     # +1 for unpack and +1 that @contextmanager adds
-    dest = _get_with_destination(inspect.currentframe().f_back.f_back)
+    unpacker_frame = inspect.currentframe().f_back.f_back
+    dest = _get_with_destination(unpacker_frame)
     if isinstance(dest, tuple):
         yield tuple(dictionary[key] for key in dest)
     else:
