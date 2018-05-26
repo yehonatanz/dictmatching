@@ -29,14 +29,24 @@ def main():
         packages=find_packages(exclude=['tests']),
         version=_get_version(),
         long_description=_read('README.rst'),
-        license=_read('LICENSE'),
         include_package_data=True,
         python_requires=">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*",
         url='https://github.com/yehonatanz/dictmatching',
+        author='yehonatanz',
         install_requires=[
             'decorator',
             'six',
         ],
+        classifiers=(
+            'License :: OSI Approved :: MIT License',
+            'Programming Language :: Python :: 2',
+            'Programming Language :: Python :: 2.7',
+            'Programming Language :: Python :: 3',
+            'Programming Language :: Python :: 3.4',
+            'Programming Language :: Python :: 3.5',
+            'Programming Language :: Python :: 3.6',
+            'Programming Language :: Python :: 3.7',
+        )
     )
 
 
