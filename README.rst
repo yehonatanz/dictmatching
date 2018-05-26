@@ -4,6 +4,8 @@ dictmatching
     :target: https://travis-ci.com/yehonatanz/dictmatching
 .. image:: https://codecov.io/gh/yehonatanz/dictmatching/branch/master/graph/badge.svg
     :target: https://codecov.io/gh/yehonatanz/dictmatching
+.. image:: https://badge.fury.io/py/dictmatching.svg
+    :target: https://badge.fury.io/py/dictmatching
 
 Unpacking dicts is now easier than ever:
 
