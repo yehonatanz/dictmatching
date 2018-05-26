@@ -14,8 +14,10 @@ def unpack(dictionary):
     Usage example:
     >>> d1 = dict(a=1, b=2)
     >>> d2 = dict(x=3, y=4)
-    >>> with unpack(d1) as a, unpack(d2) as (x, y):
-    ...     print(a + x + y)
+    >>> with unpack(d1) as b, unpack(d2) as (x, y):
+    ...     assert b == 2
+    ...     assert x == 3
+    ...     assert y == 4
     """
     # +1 for unpack and +1 that @contextmanager adds
     unpacker_frame = inspect.currentframe().f_back.f_back

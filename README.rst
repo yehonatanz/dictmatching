@@ -11,6 +11,9 @@ Unpacking dicts is now easier than ever:
     
     from dictmatching import unpack
     
-    d = {'a': 3, 'b': 7}
-    with unpack(d) as (a, b):
-        print('{} + {} = {}'.format(a, b, a + b))
+    d1 = dict(a=1, b=2)
+    d2 = dict(x=3, y=4)
+    with unpack(d1) as b, unpack(d2) as (x, y):
+        assert b == 2
+        assert x == 3
+        assert y == 4
