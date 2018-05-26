@@ -10,14 +10,14 @@ from six.moves import cStringIO as StringIO, map, filter
 
 Op = namedtuple('Op', 'lineno lasti label offset name arg desc'.split())
 OP_REGEX = re.compile(
-    r'^'
-    + r'^(?:(?P<lineno>\d+)\s)?'
-    + r'(?:(?:(?P<lasti>-->)|\s{3})\s)?'
-    + r'(?:(?:(?P<label>>>)|\s{2})\s)?'
-    + r'\s*?(?P<offset>\d+)\s+'
-    + r'\s*?(?P<name>\w+)'
-    + r'(?:\s+(?P<arg>\d+)(?:\s+\((?P<desc>.*?)\))?)?'
-    + r'$'
+    r'^' +
+    r'^(?:(?P<lineno>\d+)\s)?' +
+    r'(?:(?:(?P<lasti>-->)|\s{3})\s)?' +
+    r'(?:(?:(?P<label>>>)|\s{2})\s)?' +
+    r'\s*?(?P<offset>\d+)\s+' +
+    r'\s*?(?P<name>\w+)' +
+    r'(?:\s+(?P<arg>\d+)(?:\s+\((?P<desc>.*?)\))?)?' +
+    r'$'
 )
 
 
