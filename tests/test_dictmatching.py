@@ -22,3 +22,12 @@ def test_unpack_multi(d):
 def test_unpack_multi_single(d):
     with unpack(d) as (b,):
         assert b == 7
+
+
+def test_unpack_multiline(d):
+    with unpack(d) as (
+        a,
+        b,
+    ):
+        assert a == 3
+        assert b == 7

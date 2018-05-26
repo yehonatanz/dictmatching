@@ -19,7 +19,7 @@ def unpack(dictionary):
 def _get_with_destination(unpacker_frame):
     line_ops = (
         op for op in dis(unpacker_frame.f_code)
-        if op.lineno == unpacker_frame.f_lineno
+        if op.offset >= unpacker_frame.f_lasti
     )
     line_ops = list(line_ops)
     # Dispose SETUP_WITH
