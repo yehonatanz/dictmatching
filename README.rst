@@ -2,8 +2,8 @@ dictmatching
 =============
 .. image:: https://travis-ci.com/yehonatanz/dictmatching.svg?branch=master
     :target: https://travis-ci.com/yehonatanz/dictmatching
-.. image:: https://coveralls.io/repos/github/yehonatanz/dictmatching/badge.svg?branch=master
-    :target: https://coveralls.io/github/yehonatanz/dictmatching?branch=master
+.. image:: https://codecov.io/gh/yehonatanz/dictmatching/branch/master/graph/badge.svg
+    :target: https://codecov.io/gh/yehonatanz/dictmatching
 
 Unpacking dicts is now easier than ever:
 
