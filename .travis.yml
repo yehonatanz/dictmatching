@@ -6,11 +6,11 @@ python:
   - "3.6"
   - "3.7-dev"
 before_install:
-  - pip install pytest pytest-cov codecov pep8
+  - pip install pytest pytest-cov codecov pycodestyle
 install:
   - pip install -e .
 script:
-  - pep8
+  - pycodestyle
   - pytest -vvv --cov=dictmatching
 after_success:
   - codecov
