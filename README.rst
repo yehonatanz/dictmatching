@@ -6,6 +6,10 @@ dictmatching
     :target: https://codecov.io/gh/yehonatanz/dictmatching
 .. image:: https://badge.fury.io/py/dictmatching.svg
     :target: https://badge.fury.io/py/dictmatching
+.. image:: https://api.codeclimate.com/v1/badges/8ae145e01d9ec296a80b/maintainability
+   :target: https://codeclimate.com/github/yehonatanz/dictmatching/maintainability
+   :alt: Maintainability
+
 
 Unpacking dicts is now easier than ever:
 
